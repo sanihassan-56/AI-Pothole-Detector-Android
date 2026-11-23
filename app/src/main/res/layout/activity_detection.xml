@@ -1,0 +1,290 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="☰"
+                android:textColor="#17365D"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Open menu" />
+
+            <Button
+                android:id="@+id/btnBackHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← BACK TO DASHBOARD"
+                android:textColor="#17365D"
+                android:backgroundTint="#E8F1FA"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI POTHOLE DETECTOR"
+                android:gravity="center"
+                android:textColor="#12345A"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:layout_marginTop="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YOLO26n - Edge AI Road Defect Detection"
+                android:gravity="center"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="22dp"
+                android:textColor="#718096"
+                android:textSize="13sp"
+                android:letterSpacing="0.02"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DETECTION PREVIEW"
+                android:layout_marginBottom="10dp"
+                android:textColor="#17365D"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/bg_preview_panel"
+                android:clipToOutline="true"
+                android:elevation="3dp">
+
+                <ImageView
+                    android:id="@+id/imagePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Selected road image"/>
+
+                <VideoView
+                    android:id="@+id/videoPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+                <androidx.camera.view.PreviewView
+                    android:id="@+id/cameraPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <com.sani.potholedetector.DetectionOverlay
+                    android:id="@+id/detectionOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvImagePlaceholder"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Select an image to begin detection"
+                    android:textColor="#607080"
+                    android:textSize="15sp"
+                    android:gravity="center"/>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSelectImage"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SELECT IMAGE"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_action_button"
+                app:backgroundTint="#17365D"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDetectImage"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="DETECT POTHOLES"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="#17365D"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveDetection"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SAVE DETECTION"
+                android:enabled="true"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#17365D"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSelectVideo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SELECT VIDEO"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#17365D"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlayAnnotatedVideo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="PLAY ANNOTATED VIDEO"
+                android:enabled="true"
+                android:visibility="gone"
+                android:backgroundTint="#17365D"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveAnnotatedVideo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SAVE ANNOTATED VIDEO"
+                android:enabled="true"
+                android:visibility="gone"
+                android:backgroundTint="#17365D"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRealtimeCamera"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="REAL-TIME CAMERA"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_action_button"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:elevation="6dp"
+                android:minHeight="52dp"
+                android:layout_marginBottom="12dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnViewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VIEW POTHOLE HISTORY"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:textColor="#17365D"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DETECTION INFORMATION"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:letterSpacing="0.03"
+                android:textColor="#17365D"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: Waiting for image..."
+                android:textColor="#444444"
+                android:padding="12dp"
+                android:gravity="center"
+                android:background="@drawable/bg_info_card"
+                android:elevation="2dp"
+                android:minHeight="55dp"/>
+
+            <TextView
+                android:id="@+id/tvDetectionResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No detection results yet."
+                android:textColor="#333333"
+                android:padding="12dp"
+                android:gravity="center"
+                android:background="#FFFFFF"
+                android:layout_marginTop="8dp"/>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Powered by YOLO26n and ONNX Runtime"
+                android:textColor="#88939E"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

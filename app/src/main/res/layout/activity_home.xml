@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FA">
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="☰"
+                android:textColor="#17365D"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Open menu" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI POTHOLE DETECTOR"
+                android:gravity="center"
+                android:textColor="#17365D"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Intelligent Road Defect Monitoring APP"
+                android:textColor="#718096"
+                android:gravity="center"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="#17365D"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL DETECTIONS"
+                    android:textColor="#D8E6F5"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tvHomeTotalDetections"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnHomeLive"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="18dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="START REAL_TIME DETECTION"
+                    android:textColor="#17365D"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="RESULTS DASHBOARD"
+                android:gravity="center"
+                android:textColor="#17365D"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Latest detection"
+                    android:gravity="center"
+                    android:textColor="#718096"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvHomeLatestResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="No detection results yet"
+                    android:gravity="center"
+                    android:textColor="#17365D"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvHomeConfidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Confidence: --"
+                    android:gravity="center"
+                    android:textColor="#718096"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text=" DETECTION TOOLS "
+                android:textColor="#17365D"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHomeImage"
+                android:layout_width="match_parent"
+                app:backgroundTint="#07665D"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:text="DETECT FROM IMAGE" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHomeVideo"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                app:backgroundTint="#07665D"
+                android:layout_marginTop="8dp"
+                android:text="DETECT FROM VIDEO" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHomeHistory"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                app:backgroundTint="#07665D"
+                android:layout_marginTop="8dp"
+                android:text="DETECTION HISTORY" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Powered by YOLO26n and ONNX Runtime"
+                android:textColor="#8795A8"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
