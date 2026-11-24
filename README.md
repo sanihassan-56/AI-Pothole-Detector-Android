@@ -110,6 +110,34 @@ MSc Artificial Intelligence Project.
 
 License information will be added separately.
 
+## System Architecture
+
+The Android application uses an offline edge-AI architecture powered by YOLO26n and ONNX Runtime.
+
+```mermaid
+flowchart TD
+    A["User"] --> B["AI Pothole Detector App"]
+
+    B --> C["Image Detection"]
+    B --> D["Video Detection"]
+    B --> E["Real-Time Camera Detection"]
+
+    C --> F["Image Preprocessing"]
+    D --> F
+    E --> F
+
+    F --> G["YOLO26n ONNX Model"]
+
+    G --> H["ONNX Runtime Inference"]
+    H --> I["Detection Postprocessing"]
+    I --> J["Pothole Class Filtering"]
+
+    J --> K["Bounding Boxes and Confidence Scores"]
+
+    K --> L["Detection Results Dashboard"]
+    K --> M["Detection History"]
+    K --> N["Annotated Video Output"]
+
 ## Application Screenshots
 
 ### Home Dashboard
