@@ -109,3 +109,17 @@ MSc Artificial Intelligence Project.
 ## License
 
 License information will be added separately.
+
+## Application Screenshots
+
+### Home Dashboard
+![Home Dashboard](screenshots/dashboard.jpg)
+
+### Image-Based Pothole Detection
+![Image Detection](screenshots/image-detection.jpg)
+
+### Video-Based Pothole Detection
+![video Detection](screenshots/video-detection.jpg)
+
+### Real-Time Pothole Detection
+![Real-Time Detection](screenshots/realtime-detection.jpg)
